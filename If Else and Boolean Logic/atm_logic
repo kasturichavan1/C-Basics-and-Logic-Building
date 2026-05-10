@@ -1,0 +1,30 @@
+Q.input an amount and determine the minimum number of ₹2000, ₹500, and ₹100 notes required to represent that amount.
+
+#include <stdio.h>
+
+int main() {
+    int a, b, c, d, rem;
+
+    printf("Enter an amount: ");
+    scanf("%d", &a);
+
+    b = a / 2000;
+    rem = a % 2000;
+
+    c = rem / 500;
+    rem = rem % 500;
+
+    d = rem / 100;
+    rem = rem % 100;
+
+    if(rem != 0)
+        printf("Amount cannot be fully divided using 2000, 500, and 100 notes");
+
+    else {
+        printf("2000 notes = %d\n", b);
+        printf("500 notes = %d\n", c);
+        printf("100 notes = %d\n", d);
+    }
+
+    return 0;
+}
